@@ -1,13 +1,15 @@
 import { useFormContext, Controller } from 'react-hook-form';
 import { formatPhoneNumber } from '@/utils/formatters/phone-formatter';
 import { UserModel } from '@/domain/models/user.model';
+import { ButtonController } from '../controllers/button.controller';
 
 interface ContactFormViewProps {
   onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
 }
 
 export const ContactFormView = ({ onSubmit }: ContactFormViewProps) => {
-  const { control, formState: { errors } } = useFormContext<UserModel>();
+  const { control, formState: { errors, isSubmitting }, watch } = useFormContext<UserModel>();
+  const userType = watch('type');
 
   return (
     <form onSubmit={(e) => {
@@ -77,12 +79,14 @@ export const ContactFormView = ({ onSubmit }: ContactFormViewProps) => {
           )}
         </div>
 
-        <button
+        <ButtonController
           type="submit"
-          className="w-full bg-brand-primary text-neutral-light-gray-01 py-3 rounded-lg hover:bg-brand-primary-dark transition-colors"
+          fullWidth
+          size="md"
+          loading={isSubmitting}
         >
-          Quero fazer ser cliente
-        </button>
+          {userType === 'personal' ? 'Quero ser cliente' : 'Quero para minha empresa'}
+        </ButtonController>
       </form>
   );
 };
