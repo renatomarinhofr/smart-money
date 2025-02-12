@@ -8,7 +8,7 @@ interface ContactFormViewProps {
 }
 
 export const ContactFormView = ({ onSubmit }: ContactFormViewProps) => {
-  const { control, formState: { errors, isSubmitting }, watch } = useFormContext<UserModel>();
+  const { control, formState: { errors, isSubmitting, isValid }, watch } = useFormContext<UserModel>();
   const userType = watch('type');
 
   return (
@@ -84,6 +84,7 @@ export const ContactFormView = ({ onSubmit }: ContactFormViewProps) => {
           fullWidth
           size="md"
           loading={isSubmitting}
+          disabled={!isValid}
         >
           {userType === 'personal' ? 'Quero ser cliente' : 'Quero para minha empresa'}
         </ButtonController>

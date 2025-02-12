@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import { AnimatedNumber } from '@/components/AnimatedNumber'
 import { FormCardController } from '@/presentation/controllers/form-card.controller';
+import { TypeAnimation } from 'react-type-animation';
 
 export default function Home() {
   return (
@@ -26,7 +27,15 @@ export default function Home() {
               </span>
 
               <h1 className="text-[32px] lg:text-[56px] font-semibold text-neutral-light-gray-01 text-center lg:text-left">
-                Conta digital que não é só uma conta digital.
+                <TypeAnimation
+                  sequence={[
+                    'Conta digital que não é só uma conta digital.',
+                  ]}
+                  wrapper="span"
+                  cursor={true}
+                  repeat={1}
+                  speed={50}
+                />
               </h1>
 
               <p className="text-neutral-light-gray-01 lg:text-lg text-center lg:text-left">
