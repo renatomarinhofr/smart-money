@@ -9,7 +9,7 @@ interface FormCardViewProps {
 
 export const FormCardView = ({ userType, onTypeChange }: FormCardViewProps) => {
   return (
-    <div className="mx-2 w-full max-w-[488px] bg-white rounded-lg p-8 space-y-8">
+    <div className="mx-1 w-full max-w-[488px] bg-white rounded-lg p-8 space-y-8 shadow-lg">
       <div className="space-y-2">
         <p className="text-sm text-neutral-dark-50">Faça parte da revolução digital!</p>
         <h2 className="text-2xl font-bold text-neutral-dark-800">

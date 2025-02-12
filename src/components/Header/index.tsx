@@ -7,6 +7,7 @@ import { MenuIcon } from '@/components/icons/Menu'
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  console.log({isMenuOpen})
 
   return (
     <header className="w-full relative bg-neutral-dark-800">
@@ -48,7 +49,10 @@ export function Header() {
         </div>
 
         <button
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          onClick={() => {
+            console.log('abrir menu')
+            setIsMenuOpen(!isMenuOpen)
+          }}
           className="lg:hidden p-2"
           aria-label="Abrir menu"
         >
