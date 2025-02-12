@@ -1,16 +1,37 @@
-import { dirname } from "path";
-import { fileURLToPath } from "url";
-import { FlatCompat } from "@eslint/eslintrc";
+import tsParser from '@typescript-eslint/parser'
+import tsPlugin from '@typescript-eslint/eslint-plugin'
+import prettierPlugin from 'eslint-plugin-prettier'
+import nextPlugin from '@next/eslint-plugin-next'
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
-
-const eslintConfig = [
-  ...compat.extends("next/core-web-vitals", "next/typescript"),
-];
-
-export default eslintConfig;
+export default [
+  {
+    files: ['**/*.{js,jsx,mjs,cjs,ts,tsx}'],
+    plugins: {
+      '@typescript-eslint': tsPlugin,
+      'prettier': prettierPlugin,
+      '@next/next': nextPlugin
+    },
+    languageOptions: {
+      parser: tsParser,
+      parserOptions: {
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+        ecmaFeatures: {
+          jsx: true
+        }
+      }
+    },
+    rules: {
+      '@typescript-eslint/no-unused-vars': 'error',
+      'no-console': 'error',
+      'prettier/prettier': ['error', {}, { usePrettierrc: true }],
+      '@typescript-eslint/explicit-function-return-type': ['error', {
+        allowExpressions: true,
+        allowTypedFunctionExpressions: true
+      }],
+      '@typescript-eslint/no-explicit-any': 'error',
+      '@typescript-eslint/no-non-null-assertion': 'error',
+      '@next/next/no-html-link-for-pages': 'error'
+    }
+  }
+]
