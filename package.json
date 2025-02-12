@@ -13,9 +13,13 @@
   },
   "dependencies": {
     "@fontsource-variable/archivo": "^5.1.1",
+    "@hookform/resolvers": "^4.0.0",
+    "framer-motion": "^12.4.2",
     "next": "15.1.7",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-hook-form": "^7.54.2",
+    "zod": "^3.24.2"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -25,13 +29,14 @@
     "@types/react-dom": "^19",
     "@typescript-eslint/eslint-plugin": "^8.24.0",
     "@typescript-eslint/parser": "^8.24.0",
+    "autoprefixer": "^10.4.20",
     "eslint": "^9",
     "eslint-config-next": "15.1.7",
     "eslint-config-prettier": "^10.0.1",
     "eslint-plugin-prettier": "^5.2.3",
-    "postcss": "^8",
+    "postcss": "^8.5.2",
     "prettier": "^3.5.0",
-    "tailwindcss": "^3.4.1",
+    "tailwindcss": "^3.4.17",
     "typescript": "^5"
   }
 }

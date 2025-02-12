@@ -9,21 +9,21 @@ export function MenuIcon() {
     >
       <path
         d="M3 12H21"
-        stroke="#070514"
+        stroke="#FFFFFF"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M3 6H21"
-        stroke="#070514"
+        stroke="#FFFFFF"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M3 18H21"
-        stroke="#070514"
+        stroke="#FFFFFF"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
