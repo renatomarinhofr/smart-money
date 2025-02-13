@@ -3,6 +3,7 @@ import { Archivo } from 'next/font/google'
 import './globals.css'
 import { ReactNode } from 'react'
 import { HeaderController } from '@/presentation/controllers/header.controller'
+import { Providers } from './providers'
 
 const archivo = Archivo({
   variable: '--font-archivo',
@@ -22,9 +23,11 @@ export default function RootLayout({
 }>): ReactNode {
   return (
     <html lang="pt-BR">
-      <body className={`${archivo.variable} antialiased font-archivo bg-neutral-light-gray-01`}>
-        <HeaderController />
-        {children}
+      <body className={archivo.variable}>
+        <Providers>
+          <HeaderController />
+          {children}
+        </Providers>
       </body>
     </html>
   )

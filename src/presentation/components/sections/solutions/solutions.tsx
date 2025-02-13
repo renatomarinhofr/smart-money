@@ -1,6 +1,6 @@
 import { ButtonController } from '@/presentation/controllers/button.controller'
 import Image from 'next/image'
-import { SolutionCard } from './solution-card'
+import * as S from './solutions.styles'
 import { FeatureCard } from './feature-card'
 
 export function Solutions() {
@@ -34,7 +34,7 @@ export function Solutions() {
   return (
     <section className="bg-white pt-32 pb-32">
       <div className="max-w-[1440px] mx-auto px-4 md:px-8 space-y-32">
-        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-16">
+        <div className="flex flex-col lg:grid lg:grid-cols-2">
           <div className="max-w-[592px] space-y-8 text-center lg:text-left">
             <div className="space-y-6">
               <h2 className="text-[32px] font-bold text-neutral-dark-800">
@@ -75,11 +75,17 @@ export function Solutions() {
             </div>
           </div>
 
-          <div className="flex items-center justify-center lg:justify-end lg:order-none">
-            <div className="w-full max-w-[488px]">
-              <SolutionCard />
-            </div>
-          </div>
+          <S.ImagesWrapper>
+            <S.ImageGroup>
+              <S.SolutionsImage
+                src="/group-solutions.svg"
+                alt="Solutions illustration"
+                width={600}
+                height={600}
+                priority
+              />
+            </S.ImageGroup>
+          </S.ImagesWrapper>
         </div>
 
         <div className="flex flex-col items-center lg:grid lg:grid-cols-4 gap-8">
