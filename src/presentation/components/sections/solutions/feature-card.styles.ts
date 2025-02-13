@@ -19,7 +19,6 @@ export const IconWrapper = styled.div`
   justify-content: center;
   margin: 0 auto;
   border-radius: ${({ theme }) => theme.borderRadius.lg};
-  background-color: ${({ theme }) => `${theme.colors.brand.primary.DEFAULT}1A`};
 
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
     margin: 0;
