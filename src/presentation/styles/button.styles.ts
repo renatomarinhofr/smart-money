@@ -19,6 +19,11 @@ export const button = tv({
         'hover:bg-brand-primary hover:text-neutral-light-gray-01',
         'active:bg-brand-primary-dark active:border-brand-primary-dark',
       ],
+      ghost: [
+        'bg-transparent text-neutral-dark-800',
+        'hover:bg-neutral-dark-50/10',
+        'active:bg-neutral-dark-50/20',
+      ],
     },
     size: {
       sm: 'px-3 py-2 text-sm',

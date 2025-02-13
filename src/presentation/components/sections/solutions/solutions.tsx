@@ -1,73 +1,95 @@
+import { ButtonController } from '@/presentation/controllers/button.controller'
 import Image from 'next/image'
-
-interface SolutionCardProps {
-  icon: string
-  title: string
-  description: string
-  alt: string
-}
-
-function SolutionCard({ icon, title, description, alt }: SolutionCardProps) {
-  return (
-    <div className="p-8 rounded-lg border border-neutral-dark-50 space-y-4">
-      <div className="w-12 h-12 rounded-lg bg-brand-primary/10 flex items-center justify-center">
-        <Image src={icon} alt={alt} width={24} height={24} />
-      </div>
-      <h3 className="text-xl font-bold text-neutral-dark-800">{title}</h3>
-      <p className="text-neutral-dark-100">{description}</p>
-    </div>
-  )
-}
+import { SolutionCard } from './solution-card'
+import { FeatureCard } from './feature-card'
 
 export function Solutions() {
-  const solutions = [
+  const features = [
     {
-      icon: '/rocket.svg',
+      icon: '/atom.png',
       title: 'Fim da complexidade',
-      description: 'Amet sed in massa dui. Purus sed ut sit. Cras sed auctor lacus venenatis tincidunt eoterra.',
+      description: 'Amet, leo turpis facilisi nam fusce nunc molestie. Orci, nibh auctor lacus eleifend tincidunt sceleris',
       alt: 'Fim da complexidade'
     },
     {
-      icon: '/wave.svg',
+      icon: '/wireless-charging.png',
       title: 'Sem burocracia',
-      description: 'Et sem sed in massa dui. Purus sed ut sit. Cras sed auctor lacus venenatis tincidunt eoterra.',
+      description: 'Eu arcu arcu vitae ipsum sed. Purus volutpat laoreet sed nisi, imperdiet sit aliquam viverra.',
       alt: 'Sem burocracia'
     },
     {
-      icon: '/mouse.svg',
+      icon: '/mouse-click.png',
       title: 'Tudo digital',
-      description: 'Suscipit pellentesque praesent duis tincidunt gravida. Take amet sed in massa dui.',
+      description: 'Dictum mi risus auctor donec et amet duis tincidunt gravida. Tellus amet, porttitor quis mauris.',
       alt: 'Tudo digital'
     },
     {
-      icon: '/chart.svg',
+      icon: '/const-evolution.png',
       title: 'Evolução constante',
-      description: 'Nam sed in massa dui. Purus sed ut sit. Cras sed auctor lacus vel gravida praesit volutpa.',
+      description: 'Commodo egestas dolor, sapien nam posuere at. Ultrices dictum cras vel gravida gravida vehicula',
       alt: 'Evolução constante'
     }
   ]
 
   return (
     <section className="bg-white pt-32 pb-32">
-      <div className="max-w-[1440px] mx-auto px-4 md:px-8">
-        <div className="max-w-[592px] space-y-6 mb-16">
-          <h2 className="text-[32px] font-bold text-neutral-dark-800">
-            Conheça nossas<br />
-            solução customizadas
-          </h2>
-          <p className="text-neutral-dark-100">
-            Suscipit pellentesque praesent auctor molestie massa nunc vitae feles eget sed ut gravida in maecenas. Tempus in in in congue proin.
-          </p>
+      <div className="max-w-[1440px] mx-auto px-4 md:px-8 space-y-32">
+        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-16">
+          <div className="max-w-[592px] space-y-8 text-center lg:text-left">
+            <div className="space-y-6">
+              <h2 className="text-[32px] font-bold text-neutral-dark-800">
+                Conheça nossas<br />
+                solução customizadas
+              </h2>
+              <p className="text-neutral-dark-100">
+                Suscipit pellentesque praesent auctor molestie massa nunc vitae feles eget sed ut gravida in maecenas. Tempus in in in congue proin.
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              <div className="flex items-center gap-4">
+                <Image src="/check.svg" alt="Check" width={24} height={24} />
+                <p className="text-neutral-dark-800 text-left">Sagittis sed cursus sed malesuada ultrices</p>
+              </div>
+              <div className="flex items-center gap-4">
+                <Image src="/check.svg" alt="Check" width={24} height={24} />
+                <p className="text-neutral-dark-800 text-left">Lectus ac at massa ac tellus fringilla aenean</p>
+              </div>
+              <div className="flex items-center gap-4">
+                <Image src="/check.svg" alt="Check" width={24} height={24} />
+                <p className="text-neutral-dark-800 text-left">Cras faucibus tristique volutpat accumsan</p>
+              </div>
+            </div>
+
+            <div className="flex flex-col items-center lg:items-start gap-4">
+              <ButtonController className="w-full lg:w-fit">
+                Quero ser cliente
+              </ButtonController>
+              <ButtonController
+                variant="ghost"
+                className="flex items-center gap-2 justify-center lg:justify-start px-0 hover:bg-transparent font-archivo text-base leading-6 tracking-[0%] font-normal"
+              >
+                <Image src="/phone.svg" alt="Phone" width={13.33} height={20} />
+                Fale conosco
+              </ButtonController>
+            </div>
+          </div>
+
+          <div className="flex items-center justify-center lg:justify-end lg:order-none">
+            <div className="w-full max-w-[488px]">
+              <SolutionCard />
+            </div>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {solutions.map((solution, index) => (
-            <SolutionCard
+        <div className="flex flex-col items-center lg:grid lg:grid-cols-4 gap-8">
+          {features.map((feature, index) => (
+            <FeatureCard
               key={index}
-              icon={solution.icon}
-              title={solution.title}
-              description={solution.description}
-              alt={solution.alt}
+              icon={feature.icon}
+              title={feature.title}
+              description={feature.description}
+              alt={feature.alt}
             />
           ))}
         </div>

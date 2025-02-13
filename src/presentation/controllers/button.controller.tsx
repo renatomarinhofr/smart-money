@@ -9,6 +9,7 @@ type ButtonControllerProps = ButtonModel;
 export const ButtonController = ({
   onClick,
   disabled = false,
+  className,
   ...props
 }: ButtonControllerProps) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -29,6 +30,7 @@ export const ButtonController = ({
       onClick={handleClick}
       loading={isLoading}
       disabled={disabled || isLoading}
+      className={className}
       {...props}
     />
   );
