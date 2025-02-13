@@ -13,8 +13,8 @@ export function MenuIcon({ isOpen }: MenuIconProps) {
       translateY: 0
     },
     opened: {
-      rotate: 45,
-      translateY: 8
+      rotate: 10,
+      translateY: 2,
     }
   };
 
@@ -33,8 +33,8 @@ export function MenuIcon({ isOpen }: MenuIconProps) {
       translateY: 0
     },
     opened: {
-      rotate: -45,
-      translateY: -8
+      rotate: -20,
+      translateY: -4
     }
   };
 
