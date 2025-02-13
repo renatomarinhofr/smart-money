@@ -5,6 +5,7 @@ import { Solutions } from '@/presentation/components/sections/solutions/solution
 import { Blog } from '@/presentation/components/sections/blog/blog';
 import { Features } from '@/presentation/components/sections/features/features';
 import { CallToAction } from '@/presentation/components/sections/call-to-action/call-to-action';
+import { Faq } from '@/presentation/components/sections/faq/faq';
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Blog />
       <Features />
       <CallToAction />
+      <Faq />
     </main>
   )
 }
