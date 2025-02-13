@@ -24,7 +24,7 @@ export function SolutionCard() {
 
           <div className="w-full h-[2px] md:h-[3px] bg-neutral-light-gray-02 my-2 md:my-5 rounded-full"></div>
 
-          <Image src="/avatars.png" alt="Avatars" width={46} height={16} className="md:w-[92px] md:h-[32px]" />
+          <Image src="/avatars.png" alt="Avatars" width={125} height={35} className="md:w-[125px] md:h-[35px]" />
         </div>
       </div>
     </div>
