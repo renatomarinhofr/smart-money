@@ -18,7 +18,6 @@ interface SolutionsProps {
   }
 }
 
-
 export function Solutions({ data }: SolutionsProps) {
   if (!data) return null
   const features = [
@@ -63,18 +62,14 @@ export function Solutions({ data }: SolutionsProps) {
                 <br />
                 {data.title.line2}
               </h2>
-              <p className="text-neutral-dark-100">
-                {data.description}
-              </p>
+              <p className="text-neutral-dark-100">{data.description}</p>
             </div>
 
             <div className="space-y-4">
               {data.checklistItems.map((item, index) => (
                 <div key={index} className="flex items-center gap-4">
                   <Image src="/check.svg" alt="Check" width={24} height={24} />
-                  <p className="text-neutral-dark-800 text-left">
-                    {item.text}
-                  </p>
+                  <p className="text-neutral-dark-800 text-left">{item.text}</p>
                 </div>
               ))}
             </div>

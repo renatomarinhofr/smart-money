@@ -37,13 +37,13 @@ export const Description = styled.p`
 export const BackLink = styled.a`
   display: inline-block;
   background-color: ${({ theme }) => theme.colors.brand.primary};
-  color: ${({ theme }) => theme.colors.neutral.light[100]};
+  color: ${({ theme }) => theme.colors.neutral.light['gray-02']};
   padding: 1rem 2rem;
   border-radius: 0.5rem;
   font-weight: 500;
   transition: background-color 0.2s;
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.brand.primaryDark};
+    background-color: ${({ theme }) => theme.colors.brand.primary.dark};
   }
 `

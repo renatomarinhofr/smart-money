@@ -12,21 +12,22 @@ export default {
           name: 'text',
           title: 'Text',
           type: 'string',
-          description: 'The text to display in the tag (e.g., "✨ Tecnologia disruptiva")',
-        },
-      ],
+          description:
+            'The text to display in the tag (e.g., "✨ Tecnologia disruptiva")'
+        }
+      ]
     },
     {
       name: 'title',
       title: 'Title',
       type: 'string',
-      description: 'The main title text of the hero section',
+      description: 'The main title text of the hero section'
     },
     {
       name: 'description',
       title: 'Description',
       type: 'string',
-      description: 'The description text below the title',
+      description: 'The description text below the title'
     },
     {
       name: 'stats',
@@ -39,8 +40,8 @@ export default {
           type: 'object',
           fields: [
             { name: 'value', title: 'Value', type: 'number' },
-            { name: 'label', title: 'Label', type: 'string' },
-          ],
+            { name: 'label', title: 'Label', type: 'string' }
+          ]
         },
         {
           name: 'offices',
@@ -48,8 +49,8 @@ export default {
           type: 'object',
           fields: [
             { name: 'value', title: 'Value', type: 'number' },
-            { name: 'label', title: 'Label', type: 'string' },
-          ],
+            { name: 'label', title: 'Label', type: 'string' }
+          ]
         },
         {
           name: 'revenue',
@@ -58,10 +59,10 @@ export default {
           fields: [
             { name: 'value', title: 'Value', type: 'number' },
             { name: 'label', title: 'Label', type: 'string' },
-            { name: 'suffix', title: 'Suffix', type: 'string' },
-          ],
-        },
-      ],
-    },
-  ],
+            { name: 'suffix', title: 'Suffix', type: 'string' }
+          ]
+        }
+      ]
+    }
+  ]
 }

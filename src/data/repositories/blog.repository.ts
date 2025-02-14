@@ -4,7 +4,8 @@ import { WordPressPost } from '@/domain/models/wordpress-post.model'
 
 const endpoint = 'https://devblog.insanydesign.com/graphql'
 const graphQLClient = new GraphQLClient(endpoint, {
-  fetch: (url: RequestInfo | URL, init?: RequestInit) => fetch(url, { ...init, cache: 'force-cache' })
+  fetch: (url: RequestInfo | URL, init?: RequestInit) =>
+    fetch(url, { ...init, cache: 'force-cache' })
 })
 
 const months = [
@@ -73,7 +74,7 @@ export async function getBlogPosts(): Promise<BlogPost[]> {
     const data = await graphQLClient.request<{
       posts: { nodes: WordPressPost[] }
     }>(query)
-    
+
     return data.posts.nodes.map((post) => ({
       id: post.id,
       category: 'Blog',

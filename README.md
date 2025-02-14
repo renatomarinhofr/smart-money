@@ -5,7 +5,7 @@ Um SPA moderno e responsivo construído com Next.js 14 e Sanity CMS, seguindo pa
 ## Tecnologias Utilizadas
 
 ### Frontend
-- **Next.js 14** - Framework React com App Router
+- **Next.js 15** - Framework React com App Router
 - **TypeScript** - Tipagem estática
 - **Styled Components** - Estilização com CSS-in-JS
 - **TailwindCSS** - Utilitários CSS

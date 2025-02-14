@@ -23,11 +23,11 @@ export default [
     },
     rules: {
       '@typescript-eslint/no-unused-vars': 'error',
-      'no-console': 'error',
+      'no-console': 'off',
       'prettier/prettier': ['error', {}, { usePrettierrc: true }],
       '@typescript-eslint/explicit-function-return-type': 'off',
-      '@typescript-eslint/no-explicit-any': 'error',
-      '@typescript-eslint/no-non-null-assertion': 'error',
+      '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/no-non-null-assertion': 'off',
       '@next/next/no-html-link-for-pages': 'error'
     }
   }

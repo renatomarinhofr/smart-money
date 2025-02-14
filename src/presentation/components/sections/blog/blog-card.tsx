@@ -15,8 +15,9 @@ export function BlogCard({ post, isActive, onClick }: BlogCardProps) {
   return (
     <Link href={`/blog/${post.id}`}>
       <article
-        className={`rounded-lg overflow-hidden min-w-[280px] max-w-[280px] h-[520px] shadow-lg mb-4 ${isActive ? 'ring-2 ring-brand-primary' : ''
-          } cursor-pointer transition-all duration-200 hover:shadow-xl`}
+        className={`rounded-lg overflow-hidden min-w-[280px] max-w-[280px] h-[520px] shadow-lg mb-4 ${
+          isActive ? 'ring-2 ring-brand-primary' : ''
+        } cursor-pointer transition-all duration-200 hover:shadow-xl`}
         onClick={onClick}
       >
         <div className="relative h-[320px]">

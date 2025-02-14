@@ -33,11 +33,11 @@ export function BlogPostView({ post }: BlogPostViewProps) {
               </svg>
               Voltar
             </Link>
-            / <Link href="/">artigos</Link> / <S.PostTitle>{post.title}</S.PostTitle>
+            / <Link href="/">artigos</Link> /{' '}
+            <S.PostTitle>{post.title}</S.PostTitle>
           </S.Breadcrumb>
           <S.Category>{post.category}</S.Category>
           <S.Title>{post.title}</S.Title>
-
 
           <S.AuthorInfo>
             <Image
@@ -55,9 +55,7 @@ export function BlogPostView({ post }: BlogPostViewProps) {
             </div>
           </S.AuthorInfo>
 
-          {post.image && (
-            <S.FeaturedImage src={post.image} alt={post.title} />
-          )}
+          {post.image && <S.FeaturedImage src={post.image} alt={post.title} />}
         </S.Header>
 
         <S.Content dangerouslySetInnerHTML={{ __html: post.excerpt }} />
