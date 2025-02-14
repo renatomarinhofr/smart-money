@@ -1,6 +1,6 @@
 # Smart Money
 
-Um SPA moderno e responsivo construído com Next.js 14 e Sanity CMS, seguindo padrões de arquitetura MVC e as melhores práticas de desenvolvimento.
+Um SPA moderno e responsivo construído com Next.js 15 e Sanity CMS, seguindo padrões de arquitetura MVC e as melhores práticas de desenvolvimento.
 
 ## Tecnologias Utilizadas
 
@@ -148,7 +148,14 @@ npm start
 
 ## Deploy
 
-O projeto está configurado para deploy na Vercel, com integrações automáticas com o Sanity CMS.
+### Ambiente de Produção
+A aplicação está disponível em:
+[https://smart-money-inky.vercel.app/](https://smart-money-inky.vercel.app/)
+
+### Gerenciamento de Conteúdo (CMS)
+Para gerenciar o conteúdo do site:
+Acesse o Sanity Studio em: [https://smart-money-inky.vercel.app/studio](https://smart-money-inky.vercel.app/studio)
+
 
 ```bash
 vercel deploy
