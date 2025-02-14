@@ -44,11 +44,11 @@ export function useCarouselController(totalSlides: number): CarouselController {
 
   const handleDragMove = (e: React.MouseEvent | React.TouchEvent) => {
     if (!isDragging) return
-    
+
     const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX
     const deltaX = clientX - dragStartX
-    
-    if (Math.abs(deltaX) > 50) { // Threshold de 50px
+
+    if (Math.abs(deltaX) > 50) {
       if (deltaX > 0) {
         goToPrevSlide()
       } else {

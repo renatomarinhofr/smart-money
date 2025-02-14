@@ -1,18 +1,18 @@
-'use client';
+'use client'
 
-import Image from 'next/image';
-import Link from 'next/link';
-import { motion, AnimatePresence } from 'framer-motion';
-import { MenuItem } from '@/domain/models/menu.model';
-import { MenuIcon } from '@/components/icons/Menu';
-import { headerStyles } from '../styles/header.styles';
-import { menuVariants, menuItemVariants } from '../animations/header.animations';
+import Image from 'next/image'
+import Link from 'next/link'
+import { motion, AnimatePresence } from 'framer-motion'
+import { MenuItem } from '@/domain/models/menu.model'
+import { MenuIcon } from '@/components/icons/Menu'
+import { headerStyles } from '../styles/header.styles'
+import { menuVariants, menuItemVariants } from '../animations/header.animations'
 
 interface HeaderViewProps {
-  menuItems: MenuItem[];
-  isMenuOpen: boolean;
-  onToggleMenu: () => void;
-  onCloseMenu: () => void;
+  menuItems: MenuItem[]
+  isMenuOpen: boolean
+  onToggleMenu: () => void
+  onCloseMenu: () => void
 }
 
 const DesktopNavigation = ({ items }: { items: MenuItem[] }) => (
@@ -33,14 +33,14 @@ const DesktopNavigation = ({ items }: { items: MenuItem[] }) => (
       Cadastre-se
     </Link>
   </div>
-);
+)
 
 const MobileNavigation = ({
   items,
-  onClose,
+  onClose
 }: {
-  items: MenuItem[];
-  onClose: () => void;
+  items: MenuItem[]
+  onClose: () => void
 }) => (
   <motion.div className={headerStyles.mobileMenuContent}>
     <motion.nav className={headerStyles.mobileNavList}>
@@ -67,13 +67,13 @@ const MobileNavigation = ({
       </Link>
     </motion.div>
   </motion.div>
-);
+)
 
 export const HeaderView = ({
   menuItems,
   isMenuOpen,
   onToggleMenu,
-  onCloseMenu,
+  onCloseMenu
 }: HeaderViewProps) => {
   return (
     <header className={headerStyles.header}>
@@ -113,5 +113,5 @@ export const HeaderView = ({
         )}
       </AnimatePresence>
     </header>
-  );
-};
+  )
+}

@@ -7,7 +7,12 @@ interface FeatureCardProps {
   alt: string
 }
 
-export function FeatureCard({ icon, title, description, alt }: FeatureCardProps) {
+export function FeatureCard({
+  icon,
+  title,
+  description,
+  alt
+}: FeatureCardProps) {
   return (
     <S.Card>
       <S.IconWrapper>

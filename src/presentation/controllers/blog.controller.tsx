@@ -18,7 +18,15 @@ export interface BlogController {
 export function useBlogController(): BlogController {
   const [api, setApi] = React.useState<CarouselApi | null>(null)
   const [currentSlide, setCurrentSlide] = React.useState(0)
-  const blogPosts = getBlogPosts()
+  const [blogPosts, setBlogPosts] = React.useState<BlogPost[]>([])
+
+  React.useEffect(() => {
+    async function loadPosts() {
+      const posts = await getBlogPosts()
+      setBlogPosts(posts)
+    }
+    loadPosts()
+  }, [])
 
   const posts = React.useMemo(() => {
     const groups = []
@@ -31,7 +39,7 @@ export function useBlogController(): BlogController {
   React.useEffect(() => {
     if (!api) return
 
-    api.on("select", () => {
+    api.on('select', () => {
       setCurrentSlide(api.selectedScrollSnap())
     })
   }, [api])
@@ -44,9 +52,12 @@ export function useBlogController(): BlogController {
     api?.scrollNext()
   }, [api])
 
-  const handleSlideSelect = React.useCallback((index: number) => {
-    api?.scrollTo(index)
-  }, [api])
+  const handleSlideSelect = React.useCallback(
+    (index: number) => {
+      api?.scrollTo(index)
+    },
+    [api]
+  )
 
   return {
     posts,

@@ -1,17 +1,21 @@
-import Image from 'next/image';
-import { UserType } from '@/domain/models/user.model';
-import { ContactFormController } from '../controllers/contact-form.controller';
+'use client'
+
+import Image from 'next/image'
+import { UserType } from '@/domain/models/user.model'
+import { ContactFormController } from '../controllers/contact-form.controller'
 
 interface FormCardViewProps {
-  userType: UserType;
-  onTypeChange: (type: UserType) => void;
+  userType: UserType
+  onTypeChange: (type: UserType) => void
 }
 
 export const FormCardView = ({ userType, onTypeChange }: FormCardViewProps) => {
   return (
     <div className="mx-1 w-full max-w-[488px] bg-white rounded-lg p-8 space-y-8 shadow-lg">
       <div className="space-y-2">
-        <p className="text-sm text-neutral-dark-50">Faça parte da revolução digital!</p>
+        <p className="text-sm text-neutral-dark-50">
+          Faça parte da revolução digital!
+        </p>
         <h2 className="text-2xl font-bold text-neutral-dark-800">
           Cadastre-se e faça parte do lançamento oficial
         </h2>
@@ -26,7 +30,9 @@ export const FormCardView = ({ userType, onTypeChange }: FormCardViewProps) => {
             checked={userType === 'personal'}
             onChange={() => onTypeChange('personal')}
           />
-          <span className="text-sm text-neutral-dark-100 font-semibold">Para você</span>
+          <span className="text-sm text-neutral-dark-100 font-semibold">
+            Para você
+          </span>
         </label>
 
         <label className="flex items-center gap-2 cursor-pointer">
@@ -37,14 +43,17 @@ export const FormCardView = ({ userType, onTypeChange }: FormCardViewProps) => {
             checked={userType === 'business'}
             onChange={() => onTypeChange('business')}
           />
-          <span className="text-sm text-neutral-dark-100 font-semibold">Para empresa</span>
+          <span className="text-sm text-neutral-dark-100 font-semibold">
+            Para empresa
+          </span>
         </label>
       </div>
 
       <ContactFormController userType={userType} />
 
       <p className="text-sm text-neutral-dark-100 font-['Calibri',_sans-serif] mb-5">
-        Ao enviar seus dados, você autoriza que a SmartMoney entre em contato e declara estar ciente da{' '}
+        Ao enviar seus dados, você autoriza que a SmartMoney entre em contato e
+        declara estar ciente da{' '}
         <a href="#" className="underline hover:text-brand-primary">
           Política de Privacidade
         </a>
@@ -59,8 +68,10 @@ export const FormCardView = ({ userType, onTypeChange }: FormCardViewProps) => {
           width={20}
           height={20}
         />
-        <span className="text-sm font-['Calibri',_sans-serif]">Seus dados estão seguros</span>
+        <span className="text-sm font-['Calibri',_sans-serif]">
+          Seus dados estão seguros
+        </span>
       </div>
     </div>
-  );
-};
+  )
+}

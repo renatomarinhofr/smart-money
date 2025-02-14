@@ -1,4 +1,7 @@
-import { CallToActionModel, CallToActionCard } from '@/domain/models/call-to-action.model'
+import {
+  CallToActionModel,
+  CallToActionCard
+} from '@/domain/models/call-to-action.model'
 
 export function useCallToActionController(): CallToActionModel {
   const cards: CallToActionCard[] = [

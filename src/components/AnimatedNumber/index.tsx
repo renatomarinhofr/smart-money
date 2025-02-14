@@ -9,7 +9,11 @@ interface AnimatedNumberProps {
   suffix?: string
 }
 
-export function AnimatedNumber({ value, label, suffix = '' }: AnimatedNumberProps) {
+export function AnimatedNumber({
+  value,
+  label,
+  suffix = ''
+}: AnimatedNumberProps) {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
   const [displayValue, setDisplayValue] = useState(0)
@@ -20,7 +24,7 @@ export function AnimatedNumber({ value, label, suffix = '' }: AnimatedNumberProp
       const steps = 60
       const stepValue = value / steps
       let current = 0
-      
+
       const timer = setInterval(() => {
         current += stepValue
         if (current >= value) {
@@ -47,7 +51,9 @@ export function AnimatedNumber({ value, label, suffix = '' }: AnimatedNumberProp
         {displayValue}
         {suffix}
       </p>
-      <p className="text-neutral-light-gray-01 text-center lg:text-left">{label}</p>
+      <p className="text-neutral-light-gray-01 text-center lg:text-left">
+        {label}
+      </p>
     </motion.div>
   )
 }

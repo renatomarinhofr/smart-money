@@ -1,7 +1,7 @@
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib/utils'
 
 interface SpinnerProps {
-  className?: string;
+  className?: string
 }
 
 export function Spinner({ className }: SpinnerProps) {
@@ -15,5 +15,5 @@ export function Spinner({ className }: SpinnerProps) {
     >
       <span className="sr-only">Loading...</span>
     </div>
-  );
+  )
 }

@@ -2,32 +2,32 @@
 
 import * as React from 'react'
 import Image from 'next/image'
-import { BlogCard } from '../components/sections/blog/blog-card'
+import { BlogPost } from '@/domain/models/blog-post.model'
 import { ButtonController } from '@/presentation/controllers/button.controller'
 import {
   Carousel,
   CarouselContent,
-  CarouselItem,
-  type CarouselApi
+  CarouselItem
 } from '@/components/ui/carousel'
-import { BlogPost } from '@/domain/models/blog-post.model'
+import { BlogCard } from '../../components/sections/blog/blog-card'
 
 interface BlogViewProps {
-  posts: BlogPost[][]
-  current: number
-  onPrevSlide: () => void
-  onNextSlide: () => void
-  onSlideSelect: (index: number) => void
-  setCarouselApi: (api: CarouselApi) => void
+  posts: BlogPost[]
+  currentSlide: number
+  api: any
+  setApi: (api: any) => void
+  handlePrevSlide: () => void
+  handleNextSlide: () => void
+  handleSlideSelect: (index: number) => void
 }
 
 export function BlogView({
   posts,
-  current,
-  onPrevSlide,
-  onNextSlide,
-  onSlideSelect,
-  setCarouselApi
+  currentSlide,
+  setApi,
+  handlePrevSlide,
+  handleNextSlide,
+  handleSlideSelect
 }: BlogViewProps) {
   return (
     <section className="bg-neutral-light-gray-01 py-16 md:py-24 overflow-hidden">
@@ -46,10 +46,18 @@ export function BlogView({
             </div>
 
             <div className="items-center hidden md:block">
-              <ButtonController variant="ghost" onClick={onPrevSlide}>
+              <ButtonController
+                variant="ghost"
+                onClick={handlePrevSlide}
+                disabled={currentSlide <= 0}
+              >
                 <Image src="/vector.png" alt="Prev" width={10} height={20} />
               </ButtonController>
-              <ButtonController variant="ghost" onClick={onNextSlide}>
+              <ButtonController
+                variant="ghost"
+                onClick={handleNextSlide}
+                disabled={currentSlide >= posts.length - 4}
+              >
                 <Image
                   src="/vector.png"
                   alt="Next"
@@ -64,33 +72,36 @@ export function BlogView({
           <div className="relative">
             <Carousel
               className="w-full"
-              setApi={setCarouselApi}
+              setApi={setApi}
               opts={{
                 align: 'start'
               }}
             >
               <CarouselContent className="-ml-4">
-                {posts.map((pagePost, pageIndex) => (
-                  <CarouselItem key={pageIndex} className="pl-4 basis-full">
-                    <div className="flex flex-col items-center md:grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                      {pagePost.map((post) => (
-                        <BlogCard key={post.id} post={post} />
-                      ))}
-                    </div>
+                {posts.map((post, index) => (
+                  <CarouselItem
+                    key={post.id}
+                    className="pl-4 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4"
+                  >
+                    <BlogCard
+                      post={post}
+                      isActive={currentSlide === index}
+                      onClick={() => handleSlideSelect(index)}
+                    />
                   </CarouselItem>
                 ))}
               </CarouselContent>
             </Carousel>
 
             <div className="flex justify-center gap-3 mt-8">
-              {posts.map((_, index) => (
+              {Array.from({ length: Math.ceil(posts.length / 4) }, (_, i) => (
                 <button
-                  key={index}
-                  onClick={() => onSlideSelect(index)}
-                  className={`w-3 h-3 rounded-full transition-colors ${
-                    current === index
+                  key={i}
+                  onClick={() => handleSlideSelect(i * 4)}
+                  className={`w-2 h-2 rounded-full transition-colors ${
+                    Math.floor(currentSlide / 4) === i
                       ? 'bg-brand-primary'
-                      : 'bg-neutral-light-gray-02'
+                      : 'bg-neutral-dark-50'
                   }`}
                 />
               ))}

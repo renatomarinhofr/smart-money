@@ -1,3 +1,5 @@
+'use client'
+
 import styled from 'styled-components'
 import Image from 'next/image'
 
@@ -49,7 +51,7 @@ export const Title = styled.h2`
   margin-bottom: 1rem;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
-    font-size: 40px
+    font-size: 40px;
   }
 `
 
@@ -150,7 +152,7 @@ export const Answer = styled.p`
   overflow: hidden;
   transition: all 0.3s ease-in-out;
 
-  &[data-expanded="true"] {
+  &[data-expanded='true'] {
     height: auto;
     opacity: 1;
     margin-top: 1rem;

@@ -1,27 +1,27 @@
-'use client';
+'use client'
 
-import { useState, useCallback } from 'react';
-import { HeaderView } from '../views/header.view';
-import { MenuItem } from '@/domain/models/menu.model';
+import { useState, useCallback } from 'react'
+import { HeaderView } from '../views/header.view'
+import { MenuItem } from '@/domain/models/menu.model'
 
 export const HeaderController = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const menuItems: MenuItem[] = [
     { label: 'Quem somos', href: '#' },
     { label: 'Soluções', href: '#' },
     { label: 'Carreira', href: '#' },
     { label: 'Contato', href: '#' },
-    { label: 'Suporte', href: '#' },
-  ];
+    { label: 'Suporte', href: '#' }
+  ]
 
   const handleToggleMenu = useCallback(() => {
-    setIsMenuOpen((prevState) => !prevState);
-  }, []);
+    setIsMenuOpen((prevState) => !prevState)
+  }, [])
 
   const handleCloseMenu = useCallback(() => {
-    setIsMenuOpen(false);
-  }, []);
+    setIsMenuOpen(false)
+  }, [])
 
   return (
     <HeaderView
@@ -30,5 +30,5 @@ export const HeaderController = () => {
       onToggleMenu={handleToggleMenu}
       onCloseMenu={handleCloseMenu}
     />
-  );
-};
+  )
+}

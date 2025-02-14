@@ -1,3 +1,5 @@
+'use client'
+
 import { useState } from 'react'
 import { useFaqController } from '@/presentation/controllers/faq.controller'
 import * as S from './faq.styles'
@@ -13,7 +15,6 @@ export function Faq() {
 
   return (
     <S.Container>
-
       <S.Grid>
         <S.Content>
           <S.ContainerTitle>

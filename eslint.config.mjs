@@ -25,10 +25,7 @@ export default [
       '@typescript-eslint/no-unused-vars': 'error',
       'no-console': 'error',
       'prettier/prettier': ['error', {}, { usePrettierrc: true }],
-      '@typescript-eslint/explicit-function-return-type': ['error', {
-        allowExpressions: true,
-        allowTypedFunctionExpressions: true
-      }],
+      '@typescript-eslint/explicit-function-return-type': 'off',
       '@typescript-eslint/no-explicit-any': 'error',
       '@typescript-eslint/no-non-null-assertion': 'error',
       '@next/next/no-html-link-for-pages': 'error'

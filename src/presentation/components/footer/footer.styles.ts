@@ -1,5 +1,6 @@
+'use client'
+
 import styled from 'styled-components'
-import Image from 'next/image'
 
 export const Container = styled.footer`
   position: relative;
@@ -162,13 +163,14 @@ export const LinksList = styled.ul<{ direction?: 'row' | 'column' }>`
   }
 `
 
-export const LinkItem = styled.li<{ hiddenMobile?: boolean }>`
+export const LinkItem = styled.li<{ 'data-hidden-mobile'?: boolean }>`
   display: flex;
   align-items: center;
   gap: ${({ theme }) => theme.space[2]};
 
   a {
-    display: ${({ hiddenMobile }) => (hiddenMobile ? 'none' : 'flex')};
+    display: ${({ 'data-hidden-mobile': hidden }) =>
+      hidden ? 'none' : 'flex'};
     color: ${({ theme }) => theme.colors.neutral.light['gray-02']};
     text-decoration: none;
     font-size: ${({ theme }) => theme.fontSizes.sm};

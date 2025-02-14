@@ -1,7 +1,6 @@
 'use client'
 
 import { useFeatureController } from '@/presentation/controllers/feature.controller'
-import { FeatureCard } from './feature-card'
 import { ButtonController } from '@/presentation/controllers/button.controller'
 import Image from 'next/image'
 import * as S from './features.styles'
@@ -26,16 +25,16 @@ export function Features() {
           <S.Column>
             <S.TitleWrapper>
               <S.Title>
-                03 vantagens exclusivas<br />
+                03 vantagens exclusivas
+                <br />
                 da SmartMoney
               </S.Title>
 
               <S.FeatureCard>
-                <S.CardTitle>
-                  Tecnologia de ponta
-                </S.CardTitle>
+                <S.CardTitle>Tecnologia de ponta</S.CardTitle>
                 <S.CardDescription>
-                  Nullam neque, rutrum et enim diam, ligula fringilla aliquet tincidunt ullamcorper elit
+                  Nullam neque, rutrum et enim diam, ligula fringilla aliquet
+                  tincidunt ullamcorper elit
                 </S.CardDescription>
                 <S.ProgressBar>
                   <S.Progress />
@@ -46,9 +45,7 @@ export function Features() {
             <S.FeatureList>
               {features.slice(1).map((feature) => (
                 <S.FeatureItem key={feature.id}>
-                  <S.FeatureTitle>
-                    {feature.title}
-                  </S.FeatureTitle>
+                  <S.FeatureTitle>{feature.title}</S.FeatureTitle>
                   <S.FeatureDescription>
                     {feature.description}
                   </S.FeatureDescription>
@@ -59,7 +56,7 @@ export function Features() {
 
           <S.Column>
             <S.RightColumn>
-              <ButtonController className='w-full lg:w-auto'>
+              <ButtonController className="w-full lg:w-auto">
                 Quero ser cliente
               </ButtonController>
 
@@ -77,8 +74,6 @@ export function Features() {
             </S.RightColumn>
           </S.Column>
         </S.Grid>
-
-
       </S.Container>
     </S.Section>
   )

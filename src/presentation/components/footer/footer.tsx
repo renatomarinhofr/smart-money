@@ -37,15 +37,13 @@ export function Footer() {
                 title="Por favor, insira um e-mail válido"
                 required
               />
-              <S.Button type="submit">
-                Receber Novidades
-              </S.Button>
+              <S.Button type="submit">Receber Novidades</S.Button>
             </S.Form>
           </S.NewsletterContainer>
           <S.ContainerLinks>
             <S.LinksContainer>
               <S.LinksTitle>Quero ser cliente</S.LinksTitle>
-              <S.LinksList direction='column'>
+              <S.LinksList direction="column">
                 <S.LinkItem>
                   <Link href="#">Acessar conta</Link>
                 </S.LinkItem>
@@ -64,16 +62,11 @@ export function Footer() {
             <S.SocialContainer>
               <S.SocialTitle>Acompanha nas redes</S.SocialTitle>
               <S.LinksList>
-                <S.LinkItem hiddenMobile>
-                  <Image
-                    src="/x.svg"
-                    alt="X"
-                    width={32}
-                    height={32}
-                  />
+                <S.LinkItem data-hidden-mobile>
+                  <Image src="/x.svg" alt="X" width={32} height={32} />
                   <Link href="#">Twitter</Link>
                 </S.LinkItem>
-                <S.LinkItem hiddenMobile>
+                <S.LinkItem data-hidden-mobile>
                   <Image
                     src="/linkedin.svg"
                     alt="Linkedin"
@@ -82,7 +75,7 @@ export function Footer() {
                   />
                   <Link href="#">Linkedin</Link>
                 </S.LinkItem>
-                <S.LinkItem hiddenMobile>
+                <S.LinkItem data-hidden-mobile>
                   <Image
                     src="/instagram.svg"
                     alt="Instagram"
@@ -91,7 +84,7 @@ export function Footer() {
                   />
                   <Link href="#">Instagram</Link>
                 </S.LinkItem>
-                <S.LinkItem hiddenMobile>
+                <S.LinkItem data-hidden-mobile>
                   <Image
                     src="/facebook.svg"
                     alt="Facebook"
@@ -116,17 +109,17 @@ export function Footer() {
             © 2022 SmartBusiness. Todos os direitos reservados
           </S.CopyrightText>
 
-            <S.LanguageSelector>
-              <Globe size={20} />
-              Português
-            </S.LanguageSelector>
+          <S.LanguageSelector>
+            <Globe size={20} />
+            Português
+          </S.LanguageSelector>
 
-            <S.CopyrightText>
-              Desenvolvido por{' '}
-              <Link href="#" className="hover:text-white">
-                Insany Design
-              </Link>
-            </S.CopyrightText>
+          <S.CopyrightText>
+            Desenvolvido por{' '}
+            <Link href="#" className="hover:text-white">
+              Insany Design
+            </Link>
+          </S.CopyrightText>
         </S.Copyright>
       </S.Content>
     </S.Container>

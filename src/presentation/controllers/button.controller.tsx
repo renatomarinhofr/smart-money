@@ -1,10 +1,10 @@
-'use client';
+'use client'
 
-import { useState } from 'react';
-import { ButtonModel } from '@/domain/models/button.model';
-import { ButtonView } from '../views/button.view';
+import { useState } from 'react'
+import { ButtonModel } from '@/domain/models/button.model'
+import { ButtonView } from '../views/button.view'
 
-type ButtonControllerProps = ButtonModel;
+type ButtonControllerProps = ButtonModel
 
 export const ButtonController = ({
   onClick,
@@ -12,18 +12,18 @@ export const ButtonController = ({
   className,
   ...props
 }: ButtonControllerProps) => {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false)
 
   const handleClick = async () => {
     if (onClick) {
       try {
-        setIsLoading(true);
-        await onClick();
+        setIsLoading(true)
+        await onClick()
       } finally {
-        setIsLoading(false);
+        setIsLoading(false)
       }
     }
-  };
+  }
 
   return (
     <ButtonView
@@ -33,5 +33,5 @@ export const ButtonController = ({
       className={className}
       {...props}
     />
-  );
-};
+  )
+}

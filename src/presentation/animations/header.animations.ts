@@ -6,8 +6,8 @@ export const menuVariants = {
       duration: 0.3,
       type: 'spring',
       stiffness: 400,
-      damping: 40,
-    },
+      damping: 40
+    }
   },
   open: {
     height: 'auto',
@@ -17,18 +17,18 @@ export const menuVariants = {
       type: 'spring',
       stiffness: 400,
       damping: 40,
-      staggerChildren: 0.1,
-    },
-  },
-} as const;
+      staggerChildren: 0.1
+    }
+  }
+} as const
 
 export const menuItemVariants = {
   closed: {
     x: -20,
-    opacity: 0,
+    opacity: 0
   },
   open: {
     x: 0,
-    opacity: 1,
-  },
-} as const;
+    opacity: 1
+  }
+} as const

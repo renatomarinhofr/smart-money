@@ -1,11 +1,11 @@
-import { motion } from 'framer-motion';
+import { motion } from 'framer-motion'
 
 interface MenuIconProps {
-  isOpen: boolean;
+  isOpen: boolean
 }
 
 export function MenuIcon({ isOpen }: MenuIconProps) {
-  const variant = isOpen ? 'opened' : 'closed';
+  const variant = isOpen ? 'opened' : 'closed'
 
   const top = {
     closed: {
@@ -14,9 +14,9 @@ export function MenuIcon({ isOpen }: MenuIconProps) {
     },
     opened: {
       rotate: 10,
-      translateY: 2,
+      translateY: 2
     }
-  };
+  }
 
   const center = {
     closed: {
@@ -25,7 +25,7 @@ export function MenuIcon({ isOpen }: MenuIconProps) {
     opened: {
       opacity: 0
     }
-  };
+  }
 
   const bottom = {
     closed: {
@@ -36,7 +36,7 @@ export function MenuIcon({ isOpen }: MenuIconProps) {
       rotate: -20,
       translateY: -4
     }
-  };
+  }
 
   const lineProps = {
     stroke: '#FFFFFF',
@@ -45,10 +45,10 @@ export function MenuIcon({ isOpen }: MenuIconProps) {
     initial: 'closed',
     animate: variant,
     transition: { type: 'spring', stiffness: 260, damping: 20 }
-  };
+  }
 
-  const unitHeight = 4;
-  const unitWidth = 24;
+  const unitHeight = 4
+  const unitWidth = 24
 
   return (
     <motion.svg
@@ -83,5 +83,5 @@ export function MenuIcon({ isOpen }: MenuIconProps) {
         {...lineProps}
       />
     </motion.svg>
-  );
+  )
 }

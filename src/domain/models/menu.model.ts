@@ -1,9 +1,9 @@
 export interface MenuItem {
-  label: string;
-  href: string;
+  label: string
+  href: string
 }
 
 export interface MenuModel {
-  items: MenuItem[];
-  isOpen: boolean;
+  items: MenuItem[]
+  isOpen: boolean
 }

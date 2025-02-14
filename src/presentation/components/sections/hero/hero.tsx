@@ -1,7 +1,9 @@
+'use client'
+
 import Image from 'next/image'
-import { TypeAnimation } from 'react-type-animation';
+import { TypeAnimation } from 'react-type-animation'
 import { AnimatedNumber } from '@/components/AnimatedNumber'
-import { FormCardController } from '@/presentation/controllers/form-card.controller';
+import { FormCardController } from '@/presentation/controllers/form-card.controller'
 
 export function Hero() {
   return (
@@ -25,9 +27,7 @@ export function Hero() {
 
             <h1 className="text-[32px] lg:text-[56px] font-semibold text-neutral-light-gray-01 text-center lg:text-left">
               <TypeAnimation
-                sequence={[
-                  'Conta digital que não é só uma conta digital.',
-                ]}
+                sequence={['Conta digital que não é só uma conta digital.']}
                 wrapper="span"
                 cursor={true}
                 repeat={1}
@@ -40,21 +40,11 @@ export function Hero() {
             </p>
 
             <div className="flex flex-col md:flex-row gap-8 md:gap-16 pt-16 pb-4 md:pb-0">
-              <AnimatedNumber
-                value={120}
-                label="Projeto realizado 2021"
-              />
+              <AnimatedNumber value={120} label="Projeto realizado 2021" />
 
-              <AnimatedNumber
-                value={12}
-                label="Escritórios no Brasil"
-              />
+              <AnimatedNumber value={12} label="Escritórios no Brasil" />
 
-              <AnimatedNumber
-                value={15}
-                label="Faturamento 2021"
-                suffix="mi"
-              />
+              <AnimatedNumber value={15} label="Faturamento 2021" suffix="mi" />
             </div>
           </div>
 
