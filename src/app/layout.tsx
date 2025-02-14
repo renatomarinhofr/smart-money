@@ -3,6 +3,7 @@ import { Archivo } from 'next/font/google'
 import './globals.css'
 import { ReactNode } from 'react'
 import { HeaderController } from '@/presentation/controllers/header.controller'
+import { Footer } from '@/presentation/components/footer/footer'
 import { Providers } from './providers'
 
 const archivo = Archivo({
@@ -27,6 +28,7 @@ export default function RootLayout({
         <Providers>
           <HeaderController />
           {children}
+          <Footer />
         </Providers>
       </body>
     </html>
