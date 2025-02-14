@@ -1,36 +1,155 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Smart Money
 
-## Getting Started
+Um SPA moderno e responsivo construído com Next.js 14 e Sanity CMS, seguindo padrões de arquitetura MVC e as melhores práticas de desenvolvimento.
 
-First, run the development server:
+## Tecnologias Utilizadas
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### Frontend
+- **Next.js 14** - Framework React com App Router
+- **TypeScript** - Tipagem estática
+- **Styled Components** - Estilização com CSS-in-JS
+- **TailwindCSS** - Utilitários CSS
+- **React Hook Form** - Gerenciamento de formulários
+- **Zod** - Validação de schemas
+
+### CMS
+- **Sanity CMS** - Headless CMS para gerenciamento de conteúdo
+- **GraphQL** - Queries para o Sanity
+- **Next.js API Routes** - Backend serverless
+
+## Arquitetura
+
+O projeto utiliza o padrão arquitetural MVC (Model-View-Controller), oferecendo uma clara separação de responsabilidades:
+
+### MVC (Model-View-Controller)
+
+- **Model**: 
+  - Representa os dados e a lógica de negócios
+  - Interfaces TypeScript
+  - Schemas do Sanity CMS
+  - Repositórios para acesso aos dados
+
+- **View**: 
+  - Interface do usuário (UI)
+  - Componentes React
+  - Styled Components para estilização
+  - Responsável apenas pela apresentação
+
+- **Controller**: 
+  - Intermediário entre Model e View
+  - Gerenciamento de estado e lógica de negócios
+  - Manipulação de eventos e interações do usuário
+  - Comunicação com o Sanity CMS
+
+### Estrutura de Pastas
+```
+/src
+  /app - App Router do Next.js
+  /data
+    /repositories - Acesso aos dados
+  /domain
+    /models - Interfaces e tipos
+  /presentation
+    /components - Views (Componentes React)
+      /sections - Seções principais do site
+      /ui - Componentes base
+    /controllers - Controllers
+    /styles - Estilos globais
+  /sanity
+    /schemas - Schemas do Sanity CMS
+    /queries - Queries GraphQL
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Benefícios da Arquitetura
+- **Organização**: Código bem estruturado e fácil de navegar
+- **Manutenibilidade**: Separação clara de responsabilidades
+- **Escalabilidade**: Facilita a adição de novas features
+- **Reusabilidade**: Componentes e lógica reutilizáveis
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Configuração do Ambiente
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Pré-requisitos
+- Node.js 18+
+- npm ou yarn
+- Conta no Sanity.io
 
-## Learn More
+### Variáveis de Ambiente
 
-To learn more about Next.js, take a look at the following resources:
+Crie um arquivo `.env.local` na raiz do projeto com as seguintes variáveis:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```env
+NEXT_PUBLIC_SANITY_PROJECT_ID="6mq67gdj"
+NEXT_PUBLIC_SANITY_DATASET="production"
+NEXT_PUBLIC_SANITY_TOKEN="skmKIVjjJW2TtAGmf97z18p9NU6E9FEFrEWNVNvpvCI7nBggQ8aNwWaF4TciyezHvv3reCAYPJWAENIK6fEK3qpUrsEPMqIiC8LkNJduI4y7tobKSmO3XERbzhBRdeHTov2eMfBzT60VpzgPYwzK5iDD0d1tyYkfbPvYMFhGtn5StEP7XqpV"
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Instalação e Execução
 
-## Deploy on Vercel
+1. **Instalando Dependências**
+```bash
+npm install
+# ou
+yarn install
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. **Executando em Desenvolvimento**
+```bash
+npm run dev
+# ou
+yarn dev
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3. **Build de Produção**
+```bash
+npm run build
+npm start
+```
+
+## Integração com Sanity CMS
+
+### Schemas Implementados
+- Blog Posts
+- Soluções
+- Depoimentos
+- Configurações Gerais
+
+### Schemas Pendentes
+- Hero Section
+- Serviços
+- FAQ
+- Equipe
+- Parceiros
+- Formulário de Contato (configurações)
+
+### Próximos Passos
+
+1. **Completar Schemas**
+   - Implementar schemas pendentes
+   - Adicionar validações e campos personalizados
+   - Configurar previews personalizados
+
+2. **Studio Customization**
+   - Personalizar interface do Sanity Studio
+   - Adicionar campos de busca e filtros
+   - Implementar workflows de publicação
+
+3. **Integrações**
+   - Implementar preview em tempo real
+   - Configurar webhooks para revalidação
+   - Adicionar sistema de assets
+
+## Boas Práticas Adotadas
+- **Clean Code** - Código limpo e manutenível
+- **DRY (Don't Repeat Yourself)** - Evitando duplicação
+- **SOLID Principles** - Princípios de design de software
+- **Semantic HTML** - Markup semântico e acessível
+- **Mobile First** - Design responsivo
+- **Performance** - Otimizações de carregamento e SSR
+
+## Deploy
+
+O projeto está configurado para deploy na Vercel, com integrações automáticas com o Sanity CMS.
+
+```bash
+vercel deploy
+```
