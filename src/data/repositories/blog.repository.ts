@@ -73,7 +73,7 @@ export async function getBlogPosts(): Promise<BlogPost[]> {
     const data = await graphQLClient.request<{
       posts: { nodes: WordPressPost[] }
     }>(query)
-
+    
     return data.posts.nodes.map((post) => ({
       id: post.id,
       category: 'Blog',

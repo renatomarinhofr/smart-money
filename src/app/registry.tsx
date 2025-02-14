@@ -9,7 +9,6 @@ export default function StyledComponentsRegistry({
 }: {
   children: React.ReactNode
 }) {
-  // Only create stylesheet once with lazy initial state
   const [sheet] = React.useState(() => new ServerStyleSheet())
 
   useServerInsertedHTML(() => {
@@ -18,7 +17,6 @@ export default function StyledComponentsRegistry({
     return styles
   })
 
-  // Only render the sheet manager on the server
   if (typeof window !== 'undefined') {
     return children
   }
