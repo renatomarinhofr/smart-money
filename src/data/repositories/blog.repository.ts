@@ -3,7 +3,9 @@ import { BlogPost } from '@/domain/models/blog-post.model'
 import { WordPressPost } from '@/domain/models/wordpress-post.model'
 
 const endpoint = 'https://devblog.insanydesign.com/graphql'
-const graphQLClient = new GraphQLClient(endpoint)
+const graphQLClient = new GraphQLClient(endpoint, {
+  fetch: (url: RequestInfo | URL, init?: RequestInit) => fetch(url, { ...init, cache: 'force-cache' })
+})
 
 const months = [
   'janeiro',
