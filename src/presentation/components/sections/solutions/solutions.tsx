@@ -1,9 +1,26 @@
+'use client'
+
 import { ButtonController } from '@/presentation/controllers/button.controller'
 import Image from 'next/image'
 import * as S from './solutions.styles'
 import { FeatureCard } from './feature-card'
 
-export function Solutions() {
+interface SolutionsProps {
+  data: {
+    title: {
+      line1: string
+      line2: string
+    }
+    description: string
+    checklistItems: Array<{
+      text: string
+    }>
+  }
+}
+
+
+export function Solutions({ data }: SolutionsProps) {
+  if (!data) return null
   const features = [
     {
       icon: '/atom.png',
@@ -42,36 +59,24 @@ export function Solutions() {
           <div className="max-w-[592px] space-y-8 text-center lg:text-left">
             <div className="space-y-6">
               <h2 className="text-[32px] font-bold text-neutral-dark-800">
-                Conheça nossas
+                {data.title.line1}
                 <br />
-                solução customizadas
+                {data.title.line2}
               </h2>
               <p className="text-neutral-dark-100">
-                Suscipit pellentesque praesent auctor molestie massa nunc vitae
-                feles eget sed ut gravida in maecenas. Tempus in in in congue
-                proin.
+                {data.description}
               </p>
             </div>
 
             <div className="space-y-4">
-              <div className="flex items-center gap-4">
-                <Image src="/check.svg" alt="Check" width={24} height={24} />
-                <p className="text-neutral-dark-800 text-left">
-                  Sagittis sed cursus sed malesuada ultrices
-                </p>
-              </div>
-              <div className="flex items-center gap-4">
-                <Image src="/check.svg" alt="Check" width={24} height={24} />
-                <p className="text-neutral-dark-800 text-left">
-                  Lectus ac at massa ac tellus fringilla aenean
-                </p>
-              </div>
-              <div className="flex items-center gap-4">
-                <Image src="/check.svg" alt="Check" width={24} height={24} />
-                <p className="text-neutral-dark-800 text-left">
-                  Cras faucibus tristique volutpat accumsan
-                </p>
-              </div>
+              {data.checklistItems.map((item, index) => (
+                <div key={index} className="flex items-center gap-4">
+                  <Image src="/check.svg" alt="Check" width={24} height={24} />
+                  <p className="text-neutral-dark-800 text-left">
+                    {item.text}
+                  </p>
+                </div>
+              ))}
             </div>
 
             <div className="flex flex-col items-center lg:items-start gap-4">

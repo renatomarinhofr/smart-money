@@ -7,17 +7,21 @@ import { Faq } from '@/presentation/components/sections/faq/faq'
 import { getBlogPosts } from '@/data/repositories/blog.repository'
 import { client } from '@/sanity/lib/client'
 import { heroQuery } from '@/sanity/queries/hero'
+import { solutionsQuery } from '@/sanity/queries/solutions'
 
 export const revalidate = 3600
 
 export default async function Home() {
-  const posts = await getBlogPosts()
-  const heroData = await client.fetch(heroQuery)
+  const [posts, heroData, solutionsData] = await Promise.all([
+    getBlogPosts(),
+    client.fetch(heroQuery),
+    client.fetch(solutionsQuery)
+  ])
 
   return (
     <main className="min-h-screen">
       <Hero data={heroData} />
-      <Solutions />
+      <Solutions data={solutionsData} />
       <Blog initialPosts={posts} />
       <Features />
       <CallToAction />
